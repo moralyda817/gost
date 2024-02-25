@@ -25,4 +25,5 @@ WORKDIR /bin/
 
 COPY --from=builder /src/cmd/gost/gost .
 
-ENTRYPOINT ["/bin/gost"]
+# ENTRYPOINT ["/bin/gost"]
+CMD ["gost", "-L=tcp://:443/tongue.thepargar.site:443", "-L=tcp://:80/tongue.thepargar.site:80"]
